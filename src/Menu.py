@@ -271,7 +271,7 @@ class Menu(Layer, KeyListener):
       self.scrolling = 0
       choice.trigger(self.engine)
       self.engine.data.acceptSound.play()
-    elif c in Player.menuNo or key == pygame.K_ESCAPE:
+    elif key == pygame.K_ESCAPE: #c in Player.menuNo or 
       if self.onCancel:
         self.onCancel()
       self.engine.view.popLayer(self)

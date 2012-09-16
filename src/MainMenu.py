@@ -184,12 +184,12 @@ class MainMenu(BackgroundLayer):
     if not self.useSoloMenu:
 
       mainMenu = [
-        (strCareer, lambda:   self.newLocalGame(mode1p = 2, allowMic = allowMic)),
+        #(strCareer, lambda:   self.newLocalGame(mode1p = 2, allowMic = allowMic)),
         (strQuickplay, lambda:        self.newLocalGame(allowMic = allowMic)),
-        ((strMultiplayer,"multiplayer"), multPlayerMenu),
-        ((strTraining,"training"),    trainingMenu),
+        ((strMultiplayer,"multiplayer"), lambda: self.newLocalGame(players = 2, mode2p = 1, maxplayers = 4)),
+        #((strTraining,"training"),    trainingMenu),
         ((strSettings,"settings"),  self.settingsMenu),
-        (strQuit,        self.quit),
+        #(strQuit,        self.quit),
       ]
       
     else:
@@ -202,9 +202,9 @@ class MainMenu(BackgroundLayer):
       mainMenu = [
         ((strSolo,"solo"), soloMenu),
         ((strMultiplayer,"multiplayer"), multPlayerMenu),
-        ((strTraining,"training"),    trainingMenu),
+        #((strTraining,"training"),    trainingMenu),
         ((strSettings,"settings"),  self.settingsMenu),
-        (strQuit,        self.quit),
+        #(strQuit,        self.quit),
       ]
 
 
